@@ -4,7 +4,7 @@ import logo2 from '../logo2.svg';
 import styled from 'styled-components';
 import {ButtonContainer} from './Boton';
 
-export default class componentName extends Component {
+export default class Navbar extends Component {
     render() {
         return (
             <div>
