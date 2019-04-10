@@ -73,11 +73,45 @@ class ProductProvider extends Component {
     };
 
     increment = id => {
-        console.log(`this is increment method`)
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+
+        product.count = product.count + 1;
+        product.total = product.count * product.price;
+
+        this.setState(() => {
+            return{cart: [...tempCart]}
+        }, () => {
+            this.addTotals()
+        })
     };
+
     decrement = id => {
-        console.log(`this is decrement method`)
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item => item.id === id);
+
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+
+        product.count = product.count - 1;
+
+        if(product.count <= 0){
+            // if we wont to delete the product we equals the (product.content)  === 0
+            //and we write here: this.removeItem(id)
+        }else{
+            product.total = product.count * product.price;
+
+            this.setState(() => {
+                return{cart: [...tempCart]}
+            }, () => {
+                this.addTotals()
+            })
+        }
     };
+
     removeItem = id => {
         let tempoProducts = [...this.state.products];
         let tempCart = [...this.state.cart];
