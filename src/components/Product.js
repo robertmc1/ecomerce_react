@@ -26,12 +26,8 @@ export default class Product extends Component {
                                     onClick={() => {
                                         value.addToCart(id);
                                     }}>
-                                    {inCart ? (
-                                        <p className="text-capitalize mb-0" disabled >
-                                            {" "}
-                                            in inCart
-                                        </p>
-                                    ) : (<i className="fas fa-cart-plus" />)}
+                                    {inCart ? 'in cart' : (<i className="fas fa-cart-plus" />)}
+                                    {/*{inCart ? 'inCart': 'add to cart'}*/}
                                 </button>
                             </div>
                         )}
