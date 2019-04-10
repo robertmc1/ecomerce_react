@@ -34,9 +34,7 @@ class ProductProvider extends Component {
     handleDetail = id => {
         const product = this.getItem(id);
         this.setState(() => {
-            return {detailProduct: product, cart: [...this.state.cart, product]};
-        }, () => {
-            console.log(this.state)
+            return {detailProduct: product};
         })
     };
 
@@ -50,7 +48,9 @@ class ProductProvider extends Component {
         product.total = price;
 
         this.setState(() =>{
-            return {product: tempProducts}
+            return {products: tempProducts, cart: [...this.state.cart, product]}
+        }, () => {
+            console.log(this.state)
         })
     };
 
