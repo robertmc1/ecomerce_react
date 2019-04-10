@@ -19,9 +19,9 @@ export default class Modal extends Component {
                             <ModalContainer>
                                 <div className="container">
                                     <div className="row">
-                                        <div id="modal" className="col-8 mx-auto col-6 col-lg-4 text-center text-capitalize p-5">
-                                            <h5>
-                                                idem added to the cart
+                                        <div id="modal" className="col-9 mx-auto col-6 col-lg-5 text-center text-capitalize p-5">
+                                            <h5 className="text-danger text-uppercase font-weight-bold">
+                                                 item added to the cart
                                             </h5>
                                             <img src={img} className="img-fluid" alt="product" />
                                             <h5>
@@ -32,7 +32,7 @@ export default class Modal extends Component {
                                             </h5>
                                             <Link to="/">
                                                 <ButtonContainer onClick={() => closeModal()}>
-                                                    store
+                                                    buy more
                                                 </ButtonContainer>
                                             </Link>
                                             <Link to="/cart">

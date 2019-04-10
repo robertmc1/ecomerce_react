@@ -10,7 +10,7 @@ export const ButtonContainer = styled.button`
     border-radius: 0.5rem;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
-    margin: 0.2rem 0.5rer 0.2 rem 0.5rem;
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
     transition: all s ease-in-out;
     &:hover{
         background: ${prop => prop.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
